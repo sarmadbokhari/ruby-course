@@ -47,6 +47,10 @@ module TM
       @tasks[tid]
     end
 
+    def get_tasks_for_project(pid)
+      @tasks.values.find {|task| task.project_id == pid}
+    end
+
     def delete_task(id)
       @tasks.delete(id)
       @tasks
@@ -84,6 +88,7 @@ module TM
       task
     end
 
+    # assign task to emp takes care of this now:
     # def create_membership(eid, pid)
     #   membership = Hash[eid => pid]
     #   @memberships.push(membership)

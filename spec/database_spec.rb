@@ -108,6 +108,16 @@ describe "Database" do
     expect(@db.tasks).to eq(testThis)
   end
 
+  it "can get tasks assigned to a specific project" do
+    project1 = @db.create_project("WORK 1")
+    project2 = @db.create_project("WORK 2")
+    task1 = @db.create_task("RIGHT new task item", project1.pid, 1)
+    task2 = @db.create_task("WRONG new task item", project2.pid, 1)
+
+    result = @db.get_tasks_for_project(project1.pid)
+    expect(result).to eq(task1)
+  end
+
 
 
 end
