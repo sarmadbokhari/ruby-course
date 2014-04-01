@@ -1,6 +1,5 @@
 class TM::Project
 attr_reader :name, :pid
-attr_accessor :tasks
 
   @@project_counter = 0
 

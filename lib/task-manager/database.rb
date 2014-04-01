@@ -33,6 +33,7 @@ module TM
     def create_project(name)
       newproject = TM::Project.new(name)
       @projects[newproject.pid] = newproject
+      newproject
     end
 
     def create_task(description, project_id, priority)
@@ -45,6 +46,10 @@ module TM
 
     def get_task(tid)
       @tasks[tid]
+    end
+
+    def get_project(pid)
+      @projects[pid]
     end
 
     def get_tasks_for_project(pid)

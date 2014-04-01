@@ -8,3 +8,7 @@ require_relative 'task-manager/task.rb'
 require_relative 'task-manager/project.rb'
 require_relative 'task-manager/database.rb'
 require_relative 'task-manager/employee.rb'
+require 'use_case.rb'
+require 'pry-debugger'
+
+require 'use_cases/show_project.rb'
